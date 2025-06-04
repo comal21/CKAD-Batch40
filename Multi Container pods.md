@@ -111,6 +111,30 @@ cat completed.txt
 ```
 exit
 ```
+[Optional]
+Identify the Pod's UID
+```
+kubectl get pod multi-ctr-app -o jsonpath='{.metadata.uid}'
+```
+
+Identify the node on which the pod is deployed and ssh into it
+```
+ssh ubuntu@nodepublicip
+```
+```
+sudo su
+```
+```
+cd /var/lib/kubelet/pods/
+```
+```
+ls
+```
+Enter the directory based on the noted POD's UID to find the emptydir volume
+e.g.: /var/lib/kubelet/pods/856ef13f-26c7-4234-98d0-8df9c120beba/volumes/kubernetes.io~empty-dir/workdir
+```
+ls
+```
 #### Cleanup
 ```
 kubectl delete po --all -n default
