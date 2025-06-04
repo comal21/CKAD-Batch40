@@ -40,7 +40,10 @@ curl 'http://localhost:80/'
 ```
 exit
 ```
-
+Cleanup
+```
+kubectl delete pod sidecar-pod
+```
 
 ### Task 2: Init container
 ```
@@ -81,10 +84,7 @@ kubectl apply -f init.yaml
 ```
 kubectl get pod
 ```
-Cleanup
-```
-kubectl delete pod sidecar-pod
-```
+
 
 Go and update the command for the init container to write the file after a lapse of 60 seconds. You would notice the main container starting only after init container has completed its task
 ```
